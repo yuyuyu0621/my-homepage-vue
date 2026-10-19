@@ -4,7 +4,9 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig({
   base: '/my-homepage-vue/',
-  outDir: './',  // 【新增这一行】让打包产物直接覆盖根目录
+  build: {
+    outDir: 'docs'  // 【关键】打包到 docs 文件夹，这是 GitHub Pages 最推荐的做法
+  },
   plugins: [
     vue(),
     VueDevTools()
